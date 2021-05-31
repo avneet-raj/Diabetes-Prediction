@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes Predictor</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<center>
+	<h1 style="background-color:hsla(9, 100%, 64%, 0.5);">Diabetes Predictor</h1>
+
+     
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Glucose Level" placeholder="Glucose (44-199)" required="required" /><br><br>
+    	<input type="text" name="Insulin" placeholder="Insulin (14-846)" required="required" /><br><br>
+        <input type="text" name="BMI" placeholder="BMI (18-67)" required="required" /><br><br>
+        <input type="text" name="AGE" placeholder="Age  (21-81)" required="required" /><br><br>
+        <input type="text" name="Pregnancies" placeholder="Pregnancies (1-17)" required="required" /><br><br>
+	<input type="text" name="BloodPressure" placeholder="BloodPressure (24-122)" required="required" /><br><br>
+	<input type="text" name="SkinThickness" placeholder="SkinThickness(7-99)" required="required" /><br><br>
+	<input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction(0.47)    " required="required" /><br><br>
+	
+		
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   <h2>{{ prediction_text }}</h2>
+
+ </div>
+
+</center>
+</body>
+</html>
